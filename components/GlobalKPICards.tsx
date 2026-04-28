@@ -142,18 +142,29 @@ export function GlobalKPICards() {
     const absoluteGrowthDisplay = absoluteGrowth
 
     // Build descriptive labels
-    // Note: selectedGeographies might be empty if we fell back to showing all geographies
     const actualSelectedGeographies = filters.geographies.length > 0 ? filters.geographies : []
     const dataTypeLabel = filters.dataType === 'value' ? 'Market Size' : 'Market Volume'
 
-    // Get market name from metadata, fallback to "Global Market"
-    const marketName = data.metadata.market_name || 'Global Market'
+    const marketName = data.metadata.market_name || 'Market'
+    const regions = data.dimensions.geographies.regions || []
 
-    const geographyLabel = actualSelectedGeographies.length === 0
-      ? `Global ${marketName}`
-      : actualSelectedGeographies.length === 1
-      ? `${actualSelectedGeographies[0]} ${marketName}`
-      : `${actualSelectedGeographies.length} Geographies ${marketName}`
+    /** When nothing is selected, sum all geographies — never label that as "Global". */
+    let geographyLabel: string
+    if (actualSelectedGeographies.length === 0) {
+      if (regions.length === 1) {
+        geographyLabel = `${regions[0]} ${marketName}`
+      } else if (regions.length > 1) {
+        geographyLabel = `${regions.join(', ')} ${marketName}`
+      } else if (allGeographies.length > 0) {
+        geographyLabel = `All markets ${marketName}`
+      } else {
+        geographyLabel = marketName
+      }
+    } else if (actualSelectedGeographies.length === 1) {
+      geographyLabel = `${actualSelectedGeographies[0]} ${marketName}`
+    } else {
+      geographyLabel = `${actualSelectedGeographies.length} Geographies ${marketName}`
+    }
     const segmentTypeLabel = targetSegmentType || 'All Segments'
 
     return {
