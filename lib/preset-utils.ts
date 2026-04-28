@@ -210,7 +210,7 @@ export function createTopMarketFilters(data: ComparisonData | null): Partial<Fil
     viewMode: 'geography-mode', // Geography on X-axis, segments as series
     geographies: topRegions,
     segments: firstLevelSegments,
-    segmentType: firstSegmentType || 'By Technology',
+    segmentType: firstSegmentType || 'By Beer Type',
     yearRange: [2023, 2027],
     dataType: 'value'
   }
@@ -238,7 +238,7 @@ export function createGrowthLeadersFilters(data: ComparisonData | null): Partial
     viewMode: 'geography-mode', // Geography on X-axis, segments as series
     geographies: topRegions,
     segments: firstLevelSegments,
-    segmentType: firstSegmentType || 'By Technology',
+    segmentType: firstSegmentType || 'By Beer Type',
     yearRange: [2025, 2031],
     dataType: 'value'
   }
@@ -266,7 +266,7 @@ export function createEmergingMarketsFilters(data: ComparisonData | null): Parti
     viewMode: 'geography-mode', // Geography on X-axis, segments as series
     geographies: topCountries,
     segments: firstLevelSegments,
-    segmentType: firstSegmentType || 'By Technology',
+    segmentType: firstSegmentType || 'By Beer Type',
     yearRange: [2025, 2031],
     dataType: 'value'
   }

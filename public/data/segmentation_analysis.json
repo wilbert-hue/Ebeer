@@ -1,62 +1,76 @@
 {
   "Global": {
-    "By Type": {
-      "Sub-Normothermic Perfusion (20–34°C)": {},
-      "Warm or Normothermic Perfusion (35–37°C)": {}
+    "By Beer Type": {
+      "Lager": {},
+      "Ale": {},
+      "Wheat Beer": {},
+      "Stout & Porter": {},
+      "Pilsner": {},
+      "Specialty / Craft Beer": {},
+      "Other Beer Types": {}
     },
-    "By Organ Type": {
-      "Liver": {},
-      "Heart": {},
-      "Lung": {},
-      "Kidney": {},
-      "Others (Pancreas, Small bowel / Intestine, Composite Tissues / Limb Perfusion (emerging use cases))": {}
+    "By Alcohol Content": {
+      "Regular Beer": {},
+      "Low-Alcohol Beer": {},
+      "Non-Alcoholic Beer": {}
     },
-    "Application / Use Case": {
-      "Organ Preservation": {},
-      "Viability Assessment": {},
-      "Physiologic Transport": {},
-      "Reconditioning Marginal Organs": {},
-      "Others (Research Use / Protocol development)": {}
+    "By Price Positioning": {
+      "Economy Beer": {},
+      "Mainstream Beer": {},
+      "Premium Beer": {},
+      "Super-Premium / Specialty Beer": {}
     },
-    "By End User": {
-      "Hospitals & Clinics": {},
-      "Specialty Clinic/Centers": {},
-      "Transplant Centers": {},
-      "Others (Research Institutes/Centers, Organ Procurement Organizations, etc.)": {}
+    "By Packaging Format & Pack Size": {
+      "Bottled Beer": {
+        "Small Bottle: Below 330 ml": {},
+        "Standard Bottle: 330 ml": {},
+        "Mid-Size Bottle: 440–500 ml": {},
+        "Large Bottle: Above 500 ml": {}
+      },
+      "Canned Beer": {
+        "Small Can: Below 330 ml": {},
+        "Standard Can: 330 ml": {},
+        "Mid-Size Can: 440–500 ml": {},
+        "Large Can: Above 500 ml": {}
+      },
+      "Draught / Keg Beer": {
+        "Small Kegs: Up to 10 L": {},
+        "Medium Kegs: 10–30 L": {},
+        "Large Kegs: Above 30 L": {}
+      },
+      "Others": {}
+    },
+    "By Sales / Consumption Channel": {
+      "On-Trade": {
+        "Bars & Pubs": {},
+        "Restaurants": {},
+        "Hotels": {},
+        "Events & Venues": {}
+      },
+      "Off-Trade": {
+        "Supermarkets & Hypermarkets": {},
+        "Convenience Stores": {},
+        "Liquor Stores": {},
+        "Online Retail": {}
+      }
     },
     "By Region": {
-      "North America": {
-        "U.S.": {},
-        "Canada": {}
-      },
       "Europe": {
-        "U.K.": {},
         "Germany": {},
-        "Italy": {},
+        "U.K.": {},
         "France": {},
         "Spain": {},
-        "Russia": {},
+        "Italy": {},
+        "Netherland": {},
+        "Belgium": {},
+        "Poland": {},
+        "Czech Republic": {},
+        "Ireland": {},
+        "Denmark": {},
+        "Sweden": {},
+        "Switzerland": {},
+        "Norway": {},
         "Rest of Europe": {}
-      },
-      "Asia Pacific": {
-        "China": {},
-        "India": {},
-        "Japan": {},
-        "South Korea": {},
-        "ASEAN": {},
-        "Australia": {},
-        "Rest of Asia Pacific": {}
-      },
-      "Latin America": {
-        "Brazil": {},
-        "Argentina": {},
-        "Mexico": {},
-        "Rest of Latin America": {}
-      },
-      "Middle East & Africa": {
-        "GCC": {},
-        "South Africa": {},
-        "Rest of Middle East & Africa": {}
       }
     }
   }

@@ -55,6 +55,14 @@ interface DashboardStore {
   setCurrency: (currency: 'USD' | 'INR') => void
 }
 
+/** Prefer Europe as default region when present in the dataset. */
+function pickDefaultGeography(data: ComparisonData | null): string {
+  if (!data?.dimensions?.geographies?.all_geographies?.length) return ''
+  const all = data.dimensions.geographies.all_geographies
+  if (all.includes('Europe')) return 'Europe'
+  return all[0] || ''
+}
+
 // Helper function to check if data has B2B/B2C segmentation
 export function hasB2BSegmentation(data: ComparisonData | null, segmentType: string): boolean {
   if (!data || !segmentType) return false
@@ -88,8 +96,7 @@ function getDefaultFilters(data: ComparisonData | null): FilterState {
   const baseYear = data.metadata.base_year
   const forecastYear = data.metadata.forecast_year
   
-  // Get first geography for default view
-  const firstGeography = data.dimensions.geographies.all_geographies?.[0] || ''
+  const firstGeography = pickDefaultGeography(data)
   
   // Get first few segments from the first segment type (for default view)
   const segmentDimension = data.dimensions.segments[firstSegmentType]
@@ -135,8 +142,7 @@ function getDefaultOpportunityFilters(data: ComparisonData | null): FilterState 
   const baseYear = data.metadata.base_year
   const forecastYear = data.metadata.forecast_year
   
-  // For opportunity matrix, default to first geography (usually India or global)
-  const firstGeography = data.dimensions.geographies.all_geographies?.[0] || ''
+  const firstGeography = pickDefaultGeography(data)
   
   // For opportunity matrix, don't pre-select segments - let user select them
   // This avoids issues where segments don't match the actual data structure
